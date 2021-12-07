@@ -1,4 +1,4 @@
-export interface Paste {
+export interface IPaste {
   user_id: number;
   paste_id: number;
   title: string | undefined | null;
