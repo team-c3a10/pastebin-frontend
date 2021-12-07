@@ -1,10 +1,15 @@
 import Login from "./Login";
 
-export default function AppHeader(): JSX.Element {
+interface HeaderProps {
+  setUserId: (userId: number | null) => void;
+  userId: number | null;
+}
+
+export default function AppHeader(props: HeaderProps): JSX.Element {
   return (
-    <header>
-      <h1>Header</h1>
-      <Login />
+    <header className="d-flex justify-content-between">
+      <h1 className="float-left ">Header</h1>
+      <Login userId={props.userId} setUserId={props.setUserId} />
     </header>
   );
 }
