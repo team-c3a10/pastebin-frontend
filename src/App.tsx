@@ -31,7 +31,6 @@ function App(): JSX.Element {
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
-  console.log(allPastes);
   return (
     <>
       <AppHeader userId={userId} setUserId={setUserId} />
