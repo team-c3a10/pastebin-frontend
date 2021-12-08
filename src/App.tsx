@@ -1,14 +1,14 @@
 import AppHeader from "./components/AppHeader";
 import PasteList from "./components/PasteList";
 import PasteForm from "./components/PasteForm";
-import { Paste } from "./utils/pasteInterface";
+import { IPaste } from "./utils/pasteInterface";
 import { API_BASE } from "./utils/APIFragments";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App(): JSX.Element {
   const [userId, setUserId] = useState<number | null>(null);
-  const [allPastes, setAllPastes] = useState<Paste[]>([]);
+  const [allPastes, setAllPastes] = useState<IPaste[]>([]);
 
   const loadAllPastes = async () => {
     await axios
@@ -31,12 +31,22 @@ function App(): JSX.Element {
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
-  console.log(allPastes);
   return (
     <>
       <AppHeader userId={userId} setUserId={setUserId} />
-      <PasteForm />
-      <PasteList />
+
+      {userId === null ? (
+        <p>Enter username to add and see pastes</p>
+      ) : (
+        <>
+          <PasteForm />
+          {allPastes.length === 0 ? (
+            <p>No pastes added</p>
+          ) : (
+            <PasteList allPastes={allPastes} />
+          )}
+        </>
+      )}
     </>
   );
 }
