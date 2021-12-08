@@ -39,7 +39,7 @@ function App(): JSX.Element {
         <p>Enter username to add and see pastes</p>
       ) : (
         <>
-          <PasteForm />
+          <PasteForm userId={userId} loadAllPastes={loadAllPastes} />
           {allPastes.length === 0 ? (
             <p>No pastes added</p>
           ) : (
