@@ -52,12 +52,14 @@ export default function Login(props: LoginProps): JSX.Element {
           </div>
         </form>
       ) : (
-        <div className="float-right d-flex flex-row">
-          <p className="p-2">User logged in {username}</p>
+        <div className="float-right d-flex flex-row align-items-center">
+          <p className="p-2 mr-1 mt-3">User logged in: {username}</p>
+          {/* <label htmlFor="signout">User logged in: {username}</label> */}
           <button
+            id="signout"
             onClick={handleSignOut}
             type="button"
-            className="btn btn-warning p-2"
+            className="btn btn-warning p-2 ml-2"
           >
             sign out
           </button>
