@@ -1,7 +1,7 @@
 import "./Paste.css";
 import { useState } from "react";
 import { IPaste } from "../utils/pasteInterface";
-import { dateFormat } from "../utils/dateFormat"
+import { dateFormat } from "../utils/dateFormat";
 
 interface PasteProps {
   paste: IPaste;

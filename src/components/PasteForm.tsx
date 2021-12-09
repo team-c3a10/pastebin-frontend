@@ -32,7 +32,6 @@ export default function PasteForm(props: FormProps): JSX.Element {
   };
 
   return (
-
     <form onSubmit={handleAddPaste} className="px-5">
       <div className="w-60 m-auto px-5 input-group mb-3">
         <input

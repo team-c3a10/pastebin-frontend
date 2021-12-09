@@ -63,7 +63,6 @@ export default function Login(props: LoginProps): JSX.Element {
           >
             sign out
           </button>
-
         </div>
       )}
     </Fragment>
