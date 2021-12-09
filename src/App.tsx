@@ -36,12 +36,12 @@ function App(): JSX.Element {
       <AppHeader userId={userId} setUserId={setUserId} />
 
       {userId === null ? (
-        <p>Enter username to add and see pastes</p>
+        <p className="text-center">Enter username to add and see pastes</p>
       ) : (
         <>
           <PasteForm userId={userId} loadAllPastes={loadAllPastes} />
           {allPastes.length === 0 ? (
-            <p>No pastes added</p>
+            <p className="text-center">No pastes added</p>
           ) : (
             <PasteList allPastes={allPastes} />
           )}
