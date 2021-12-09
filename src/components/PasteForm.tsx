@@ -32,8 +32,9 @@ export default function PasteForm(props: FormProps): JSX.Element {
   };
 
   return (
-    <form onSubmit={handleAddPaste}>
-      <div className="input-group mb-3">
+
+    <form onSubmit={handleAddPaste} className="px-5">
+      <div className="w-60 m-auto px-5 input-group mb-3">
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -51,7 +52,7 @@ export default function PasteForm(props: FormProps): JSX.Element {
           submit
         </button>
       </div>
-      <div className="mb-3">
+      <div className="w-60 px-5 m-auto mb-3">
         <textarea
           value={pasteBody}
           onChange={(e) => setPasteBody(e.target.value)}
